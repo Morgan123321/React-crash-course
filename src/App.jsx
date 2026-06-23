@@ -2,14 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import Todo from './components/TODO.jsx'
 import Title from './components/Title.jsx'
+import Modal from './components/Modal.jsx'
 
 function App() {
   return (
     <div>
     <Title/>
+    <div className='todo__wrapper'>
 <Todo></Todo>
 <Todo></Todo>
 <Todo></Todo>
+ </div>
+ <Modal />
  </div>
   );
 }
