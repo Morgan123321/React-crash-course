@@ -1,6 +1,10 @@
 function Todo() {
     return(
-        <div>Todo</div>
-    )
+    <div>
+   <h1>My Todo List</h1>
+    <Todo />
+    <Todo />
+    <Todo />
+    );
 }
-export default Todo
+export default App;
