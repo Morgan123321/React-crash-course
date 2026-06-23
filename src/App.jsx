@@ -7,22 +7,9 @@ function App() {
     <div>
     <h1>My Todo List</h1>
 <Todo></Todo>
-    <div>
-    <h2>Finish Frontend Simplified</h2>
-    <button>Delete</button>
-    </div>
-      
-    <div>
-    <h2>Finish the interview section </h2>
-    <button>Delete</button>
-    </div>
-
-      <div>
-    <h2>Land a 100k job</h2>
-    <button>Delete</button>
-    </div>
-
-    </div>
+<Todo></Todo>
+<Todo></Todo>
+ </div>
   );
 }
 
