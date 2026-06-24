@@ -9,11 +9,14 @@ function App() {
     <div>
     <Title/>
     <div className='todo__wrapper'>
-<Todo></Todo>
-<Todo></Todo>
-<Todo></Todo>
+<Todo title="Finish Frontend Simplified"
+paragraph="Code along with Frontened Simplified step by step."/>
+<Todo title="Finish Interview Section"
+paragraph="Finish every interview question in the next six weeks."/>
+<Todo title="Land a 100k job"
+paragraph="Apply to 100 jobs."/>
  </div>
- <Modal />
+ 
  </div>
   );
 }
