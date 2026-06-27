@@ -4,23 +4,34 @@ import Todo from './components/TODO.jsx';
 import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
 import Counter from './components/Counter.jsx'
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 function App() {
 const [showModal, setShowModal]=useState(false)
 
 function onTodoDelete () {
-  setShowModal(true)
-  console.log('onTodoDelete()')
+  setShowModal(true);
+
 }
 
 function cancelModal(){
-  setShowModal(false)
+  setShowModal(false);
 }
 
-function confirmModal()
+function confirmModal() {
 setShowModal(false)
+}
+
+useEffect(()=>{
+  console.log('ONLY on mount')
+  setShowModal(!showModal)
+}, [])
+
+useEffect(()=> {
+  console.log(`on mount AND on ${showModal} change`)
+
+}, [showModal])
 
   return (
     <div>
