@@ -10,6 +10,18 @@ import React, {useState} from 'react';
 function App() {
 const [showModal, setShowModal]=useState(false)
 
+function onTodoDelete () {
+  setShowModal(true)
+  console.log('onTodoDelete()')
+}
+
+function cancelModal(){
+  setShowModal(false)
+}
+
+function confirmModal()
+setShowModal(false)
+
   return (
     <div>
     <Title/>
@@ -20,15 +32,21 @@ const [showModal, setShowModal]=useState(false)
       <button onClick={() =>setShowModal(true)}>Add Todo</button>
     </div>
     <div className='todo__wrapper'>
-<Todo title="Finish Frontend Simplified"
+<Todo onTodoDelete={onTodoDelete} title="Finish Frontend Simplified"
 paragraph="Code along with Frontened Simplified step by step."/>
-<Todo title="Finish Interview Section"
+<Todo onTodoDelete={onTodoDelete} title="Finish Interview Section"
 paragraph="Finish every interview question in the next six weeks."/>
-<Todo title="Land a 100k job"
+<Todo onTodoDelete={onTodoDelete} title="Land a 100k job"
 paragraph="Apply to 100 jobs."/>
  </div>
- {showModal && <Modal title="Confirm Delete?"/>}
- <Counter />
+ {showModal && (
+ <Modal
+ cancelModal={cancelModal}
+ confirmModal={confirmModal}
+ title="Confirm Delete?"
+ />
+)}
+
  </div>
   );
 }
