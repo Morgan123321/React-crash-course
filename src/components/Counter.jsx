@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
 function Counter() {
-    const [counter, setCounter] = useState(0);
+    const [cart, setCart] = useState({item:'apple',quantity:10});
     
     function incremenetCounter() {
-    setCounter (count + 1)
+    setCounter (counter + 1)
   
     }
     
     function decrementCounter() {
-   setCounter (count - 1)
+   setCounter (counter - 1)
    
     }
     return (
         <div>
-            <button onClick={decrementCounter}>-</button>
-            {count}
-            <button onClick={incremenetCounter}>+</button>
+            <button onClick= {()=> null}>-</button>
+            {cart.quantity}
+            <button onClick={()=> null}>+</button>
         </div>
     );
 }
