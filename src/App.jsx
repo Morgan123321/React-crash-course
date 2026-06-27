@@ -3,10 +3,13 @@ import './App.css';
 import Todo from './components/TODO.jsx';
 import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
+import Counter from './components/Counter.jsx'
 import React, {useState} from 'react';
 
+
 function App() {
-useState(false)
+const [showModal, setShowModal]=useState(false)
+
   return (
     <div>
     <Title/>
@@ -14,7 +17,7 @@ useState(false)
       <input type="text" onChange={(event)=>{
         console.log (event.target.value)
       }}/>
-      <button>Add Todo</button>
+      <button onClick={() =>setShowModal(true)}>Add Todo</button>
     </div>
     <div className='todo__wrapper'>
 <Todo title="Finish Frontend Simplified"
@@ -24,7 +27,7 @@ paragraph="Finish every interview question in the next six weeks."/>
 <Todo title="Land a 100k job"
 paragraph="Apply to 100 jobs."/>
  </div>
- {true && <Modal title="Confirm Delete?"/>}
+ {showModal && <Modal title="Confirm Delete?"/>}
  </div>
   );
 }
