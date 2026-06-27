@@ -1,15 +1,20 @@
+import React, { useState } from 'react';
+
 function Counter() {
+    const [counter, setCounter] = useState(0)
     function incremenetCounter() {
-    console.log('incrementCounter()')
+    setCounter ((prevCounter)=> prevCounter + 1)
+    setCounter ((prevCounter)=> prevCounter + 1)
     }
     
     function decrementCounter() {
-    console.log('decrementCounter')
+   setCounter ((prevCounter)=> prevCounter -1)
+   setCounter ((prevCounter)=> prevCounter -1)
     }
     return (
         <div>
             <button onClick={decrementCounter}>-</button>
-            {0}
+            {useState}
             <button onClick={incremenetCounter}>+</button>
         </div>
     )

@@ -28,6 +28,7 @@ paragraph="Finish every interview question in the next six weeks."/>
 paragraph="Apply to 100 jobs."/>
  </div>
  {showModal && <Modal title="Confirm Delete?"/>}
+ <Counter />
  </div>
   );
 }
