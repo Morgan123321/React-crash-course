@@ -25,7 +25,7 @@ setShowModal(false)
 
 useEffect(()=>{
   console.log('ONLY on mount')
-  setShowModal(!showModal)
+
 }, [])
 
 useEffect(()=> {
