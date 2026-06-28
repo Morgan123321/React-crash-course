@@ -11,6 +11,8 @@ import About from './components/pages/About.jsx';
 
 
 function App() {
+const[showModal, setShowModal]=useState(false);
+}
   return (
     <div>
       <Router>
@@ -22,11 +24,7 @@ function App() {
     </Router>
     </div>
   );
-}
 
-function App(){
-  const[showModal, setShowModal]=useState(false);
-}
 
 function onTodoDelete () {
   setShowModal(true);
@@ -60,7 +58,7 @@ useEffect(()=> {
       <input type="text" onChange={(event)=>{
         console.log (event.target.value)
       );
-    
+
       <button onClick={() =>setShowModal(true)}>Add Todo</button>
     </div>
     <div className='todo__wrapper'>
