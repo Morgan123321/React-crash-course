@@ -25,8 +25,6 @@ function App() {
 }
 
 
-function App() {
-const [showModal, setShowModal]=useState(false)
 
 function onTodoDelete () {
   setShowModal(true);
@@ -78,6 +76,6 @@ paragraph="Apply to 100 jobs."/>
 
  </div>
   );
-}
+
 
 export default App;
