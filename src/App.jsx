@@ -12,7 +12,7 @@ import About from './components/pages/About.jsx';
 
 function App() {
 const[showModal, setShowModal]=useState(false);
-}
+
   return (
     <div>
       <Router>
@@ -24,7 +24,7 @@ const[showModal, setShowModal]=useState(false);
     </Router>
     </div>
   );
-
+}
 
 function onTodoDelete () {
   setShowModal(true);
