@@ -24,7 +24,9 @@ function App() {
   );
 }
 
-
+function App(){
+  const[showModal, setShowModal]=useState(false);
+}
 
 function onTodoDelete () {
   setShowModal(true);
@@ -47,7 +49,9 @@ useEffect(()=>{
 useEffect(()=> {
   console.log(`on mount AND on ${showModal} change`)
 
-}, [showModal])
+ [showModal]) 
+
+ 
 
   return (
     <div>
