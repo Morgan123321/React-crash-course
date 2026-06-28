@@ -5,6 +5,24 @@ import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
 import Counter from './components/Counter.jsx'
 import React, {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './components/pages/Home.jsx';
+import About from './components/pages/About.jsx';
+
+
+function App() {
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/"element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+                    
+        </Routes>
+    </Router>
+    </div>
+  );
+}
 
 
 function App() {
