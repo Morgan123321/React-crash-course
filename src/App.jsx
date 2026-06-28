@@ -59,7 +59,8 @@ useEffect(()=> {
     <div>
       <input type="text" onChange={(event)=>{
         console.log (event.target.value)
-      }}/>
+      );
+    
       <button onClick={() =>setShowModal(true)}>Add Todo</button>
     </div>
     <div className='todo__wrapper'>
