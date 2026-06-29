@@ -11,74 +11,77 @@ import About from './components/pages/About.jsx';
 
 
 function App() {
-const[showModal, setShowModal]=useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  function onTodoDelete() {
+    setShowModal(true);
+  }
+
+  function cancelModal() {
+    setShowModal(false);
+  }
+
+  function confirmModal() {
+    setShowModal(false);
+  }
+
+  useEffect(() => {
+    console.log('ONLY on mount');
+  }, []);
+
+  useEffect(() => {
+    console.log(`on mount AND on ${showModal} change`);
+  }, [showModal]); 
 
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/"element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-                    
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
         </Routes>
-    </Router>
+      </Router>
+
+      <Title />
+      <div>
+        {/* FIXED: Correctly closed curly braces for onChange below */}
+        <input 
+          type="text" 
+          onChange={(event) => {
+            console.log(event.target.value);
+          }} 
+        />
+
+        <button onClick={() => setShowModal(true)}>Add Todo</button>
+      </div>
+
+      <div className="todo__wrapper">
+        <Todo 
+          onTodoDelete={onTodoDelete} 
+          title="Finish Frontend Simplified"
+          paragraph="Code along with Frontened Simplified step by step."
+        />
+        <Todo 
+          onTodoDelete={onTodoDelete} 
+          title="Finish Interview Section"
+          paragraph="Finish every interview question in the next six weeks."
+        />
+        <Todo 
+          onTodoDelete={onTodoDelete} 
+          title="Land a 100k job"
+          paragraph="Apply to 100 jobs."
+        />
+      </div>
+
+      {showModal && (
+        <Modal
+          cancelModal={cancelModal}
+          confirmModal={confirmModal}
+          title="Confirm Delete?"
+        />
+      )}
     </div>
   );
-}
-
-function onTodoDelete () {
-  setShowModal(true);
-
-}
-
-function cancelModal(){
-  setShowModal(false);
-}
-
-function confirmModal() {
-setShowModal(false)
-}
-
-useEffect(()=>{
-  console.log('ONLY on mount')
-
-}, [])
-
-useEffect(()=> {
-  console.log(`on mount AND on ${showModal} change`);
-
-},[showModal]) 
-
- 
-
-  return (
-    <div>
-    <Title/>
-    <div>
-      <input type="text" onChange={(event)=>{
-        console.log (event.target.value)
-      );
-
-      <button onClick={() =>setShowModal(true)}>Add Todo</button>
-    </div>
-    <div className='todo__wrapper'>
-<Todo onTodoDelete={onTodoDelete} title="Finish Frontend Simplified"
-paragraph="Code along with Frontened Simplified step by step."/>
-<Todo onTodoDelete={onTodoDelete} title="Finish Interview Section"
-paragraph="Finish every interview question in the next six weeks."/>
-<Todo onTodoDelete={onTodoDelete} title="Land a 100k job"
-paragraph="Apply to 100 jobs."/>
- </div>
- {showModal && (
- <Modal
- cancelModal={cancelModal}
- confirmModal={confirmModal}
- title="Confirm Delete?"
- />
-)}
-
- </div>
-  );
-
+} // <-- The App function now correctly closes at the very end
 
 export default App;
