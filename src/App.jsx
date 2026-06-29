@@ -45,9 +45,9 @@ useEffect(()=>{
 }, [])
 
 useEffect(()=> {
-  console.log(`on mount AND on ${showModal} change`)
+  console.log(`on mount AND on ${showModal} change`);
 
- [showModal]) 
+},[showModal]) 
 
  
 
