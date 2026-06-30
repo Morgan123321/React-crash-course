@@ -5,83 +5,28 @@ import Title from './components/Title.jsx';
 import Modal from './components/Modal.jsx';
 import Counter from './components/Counter.jsx'
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Home from './components/pages/Home.jsx';
 import About from './components/pages/About.jsx';
-
-
+import Contact from './components/pages/Contact.jsx';
+import Nav from "./components/nav.jsx"
 function App() {
-  const [showModal, setShowModal] = useState(false);
-
-  function onTodoDelete() {
-    setShowModal(true);
-  }
-
-  function cancelModal() {
-    setShowModal(false);
-  }
-
-  function confirmModal() {
-    setShowModal(false);
-  }
-
-  useEffect(() => {
-    console.log('ONLY on mount');
-  }, []);
-
-  useEffect(() => {
-    console.log(`on mount AND on ${showModal} change`);
-  }, [showModal]); 
-
+  
   return (
     <div>
       <Router>
+        <Nav/>
+          
+          
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path ="/contact" element={<Contact/>}/>
         </Routes>
       </Router>
 
-      <Title />
-      <div>
-        {/* FIXED: Correctly closed curly braces for onChange below */}
-        <input 
-          type="text" 
-          onChange={(event) => {
-            console.log(event.target.value);
-          }} 
-        />
-
-        <button onClick={() => setShowModal(true)}>Add Todo</button>
-      </div>
-
-      <div className="todo__wrapper">
-        <Todo 
-          onTodoDelete={onTodoDelete} 
-          title="Finish Frontend Simplified"
-          paragraph="Code along with Frontened Simplified step by step."
-        />
-        <Todo 
-          onTodoDelete={onTodoDelete} 
-          title="Finish Interview Section"
-          paragraph="Finish every interview question in the next six weeks."
-        />
-        <Todo 
-          onTodoDelete={onTodoDelete} 
-          title="Land a 100k job"
-          paragraph="Apply to 100 jobs."
-        />
-      </div>
-
-      {showModal && (
-        <Modal
-          cancelModal={cancelModal}
-          confirmModal={confirmModal}
-          title="Confirm Delete?"
-        />
-      )}
+      
     </div>
   );
-} // <-- The App function now correctly closes at the very end
-
+} 
 export default App;
