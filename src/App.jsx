@@ -10,7 +10,7 @@ import Home from './components/pages/Home.jsx';
 import About from './components/pages/About.jsx';
 import Contact from './components/pages/Contact.jsx';
 import Nav from "./components/nav.jsx";
-import Users from "./pages/Users";
+import Users from "./components/pages/Users";
 function App() {
   
   return (
