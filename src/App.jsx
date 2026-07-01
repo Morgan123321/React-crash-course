@@ -9,7 +9,8 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Home from './components/pages/Home.jsx';
 import About from './components/pages/About.jsx';
 import Contact from './components/pages/Contact.jsx';
-import Nav from "./components/nav.jsx"
+import Nav from "./components/nav.jsx";
+import Users from "./pages/Users";
 function App() {
   
   return (
@@ -20,8 +21,7 @@ function App() {
           
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path ="/contact" element={<Contact/>}/>
+          <Route path="/users/:username" element={<Users/>} />
         </Routes>
       </Router>
 
